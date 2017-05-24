@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+  nodejs:
+    image: arueth/quali-utils-nodejs:latest
+    networks:
+      - frontend
+    ports:
+      - '80:80'
+    secrets:
+      - cloudshell_user
+      - cloudshell_password
+    volumes:
+      - data:/usr/src/app/data
+
+  cron:
+    image: arueth/quali-utils-cron:latest
+    environment:
+      - CLOUDSHELL_DOMAIN=Global
+      - CLOUDSHELL_SERVER=localhost
+    networks:
+      - backend
+    secrets:
+      - cloudshell_password
+      - cloudshell_user
+    volumes:
+      - cron_configs:/usr/src/script/config
+      - data:/usr/src/script/data
+
+networks:
+  backend:
+  frontend:
+
+secrets:
+  cloudshell_user:
+    external: true
+  cloudshell_password:
+    external: true
+
+volumes:
+  cron_configs:
+  data:
