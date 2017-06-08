@@ -3,6 +3,8 @@ version: '3.1'
 services:
   nodejs:
     image: arueth/quali-utils-nodejs:latest
+    environment:
+      - NODEJS_PORT=80
     networks:
       - frontend
     ports:
@@ -11,7 +13,7 @@ services:
       - cloudshell_user
       - cloudshell_password
     volumes:
-      - data:/usr/src/app/data
+      - data:/usr/src/app/www/data
 
   cron:
     image: arueth/quali-utils-cron:latest
