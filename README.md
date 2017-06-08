@@ -6,7 +6,7 @@ This repository contains the docker-compose files, swarm files, and some basic s
 * Image: https://hub.docker.com/r/arueth/quali-utils-nodejs
 * Source: https://github.com/arueth/Quali-Utils-NodeJS
 
-### Quali-Utils-NodeJS
+### Quali-Utils-Cron
 * Image: https://hub.docker.com/r/arueth/quali-utils-cron
 * Source: https://github.com/arueth/Quali-Utils-Cron
 
