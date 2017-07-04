@@ -1,8 +1,17 @@
 version: '3.1'
 
 services:
-  nodejs:
-    image: arueth/quali-utils-nodejs:latest
-
   cron:
     image: arueth/quali-utils-cron:latest
+
+  db:
+    image: postgres:9.6.3-alpine
+
+  django:
+    image: arueth/quali-utils-django:latest
+
+  nginx:
+    image: nginx:1.13.1-alpine
+
+  nodejs:
+    image: arueth/quali-utils-nodejs:latest

@@ -12,8 +12,8 @@ This repository contains the docker-compose files, swarm files, and some basic s
 
 ## How to use with Docker Swarm
 #### 1. Create the ClouldShell username and password secrets
-    $ echo "username" | docker secret create cloudshell_user
-    $ echo "password" | docker secret create cloudshell_password
+    $ echo "username" | docker secret create cloudshell_user - 
+    $ echo "password" | docker secret create cloudshell_password -
 
 #### 2. Configure CloudShell domain and server in the docker-compose.swarm.yml file
     version: '3.1'
